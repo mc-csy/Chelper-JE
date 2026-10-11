@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>CHelper-JE · 我的世界 Java 版命令助手</title>
+<meta name="description" content="CHelper-JE 我的世界 Java 版命令助手：命令补全、语法结构、参数说明、错误提示。作者：元宝">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <div class="header">
+    <div class="brand">
+      <span class="brand-name">CHelper-JE</span>
+      <span class="brand-sub">我的世界 Java 版命令助手　·　作者：元宝</span>
+    </div>
+    <div class="box box-structure" id="structure">加载中…</div>
+    <div class="box box-hint" id="paramHint"></div>
+    <div class="box box-error" id="errorBox" style="display:none"></div>
+    <div class="ver-line"><span id="verNote"></span>　<span id="stat"></span></div>
+    <div class="line"></div>
+  </div>
+
+  <main id="list"></main>
+
+  <footer>
+    <div class="input-row">
+      <button class="btn btn-ghost" id="versionBtn">版本</button>
+      <button class="btn btn-ghost" id="clearBtn">清空</button>
+      <div class="editor-shell">
+        <div class="highlight" id="highlight"></div>
+        <textarea id="cmdInput" rows="1" autocomplete="off" autocorrect="off"
+                  autocapitalize="off" spellcheck="false" wrap="soft"
+                  placeholder="输入命令，支持中文：give @p 钻石剑 64"></textarea>
+      </div>
+      <button class="btn" id="copyBtn">复制</button>
+    </div>
+    <div class="input-row">
+      <button class="btn btn-wide" id="normBtn">中文 → ID（转成可粘贴的命令）</button>
+    </div>
+    <div class="foot-note">
+      <span>点击候选项自动补全　·　Tab 键补全首项</span>
+      <span>命令数据来自 Mojang 官方命令树</span>
+    </div>
+  </footer>
+
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3 id="modalTitle">选择版本</h3>
+      <button class="modal-close" id="modalClose">&times;</button>
+    </div>
+    <div id="modalList"></div>
+  </div>
+</div>
+
+<script src="data/commands.js"></script>
+<script src="js/values.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
